@@ -1,0 +1,154 @@
+/* -------------------------------------------------
+   0️⃣ GLOBAL SETTINGS
+   ------------------------------------------------- */
+html {font-size:16px;}
+body {
+    margin:0;
+    padding:0;
+    font-family:'Sansation', Gothampro-light, sans-serif;
+    background:#fafafa;
+}
+
+/* -------------------------------------------------
+   1️⃣ HERO BANNER – full‑width, 650 px tall
+   ------------------------------------------------- */
+#hero-banner {
+    position:relative;          /* stacking context for the wave */
+    width:100%;
+    height: 700px;px;               /* your chosen height */
+    overflow:visible;          /* allow the wave to peek out */
+    z-index:0;                  /* background layer */
+}
+#hero-image {
+    width:100%;
+    height:100%;                /* fill the container */
+    object-fit:cover;           /* keep aspect ratio, no distortion */
+    display:block;
+    filter:brightness(0.6);
+}
+
+/* -------------------------------------------------
+   2️⃣ WAVE OVERLAY (the white wave PNG)
+   ------------------------------------------------- */
+#banner-overlay {
+    position:absolute;          /* take it out of the normal flow */
+    left:0;
+    right:0;                     /* stretch full width */
+    bottom:0;                    /* stick to the bottom of #hero‑banner */
+    width:100%;                  /* guarantees it spans the whole banner */
+    height:400px;                 /* keep the PNG’s original aspect ratio */
+    z-index:1;                  /* just above the photo, below the header */
+    pointer-events:none;        /* clicks go through to elements underneath */
+}
+
+/* -------------------------------------------------
+   3️⃣ HEADER – sits on top of the hero
+   ------------------------------------------------- */
+#header {
+    position:absolute;
+    top:0; left:0;
+    width:100%;
+    height:200px;               /* you can keep this 200 px */
+    z-index:10;                 /* definitely above the wave */
+    padding:20px;
+    box-sizing:border-box;
+}
+
+/* -------------------------------------------------
+   4️⃣ LOGO
+   ------------------------------------------------- */
+#logo {
+    float:left;
+    width:260px;
+    height:auto;
+    margin-top:15px;
+    margin-left: 50px;
+}
+#logotype {
+    float:left;
+    width:1000px;
+    height:auto;
+    margin-left:-250px;
+    margin-top:-20px;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3));
+}
+/* -------------------------------------------------
+   5️⃣ TOP‑RIGHT portal / search
+   ------------------------------------------------- */
+#navigation-top {
+    position:absolute;
+    top:20px;
+    right:20px;
+    font-size:1rem;
+    font-weight:600;
+}
+#navigation-top a {
+    color:#96be2d;
+    text-decoration:none;
+    margin-left:12px;
+    font-size:20px;
+    padding:.3rem 0;
+}
+#navigation-top a:hover {
+    color:#96be2d;
+    border-bottom:2px solid white;
+}
+.search-icon {
+    width:22px;
+    vertical-align:middle;
+    margin-right:40px;
+    filter: brightness(0) invert(1);
+    image-rendering:crisp-edges;
+}
+
+/* -------------------------------------------------
+   6️⃣ BOTTOM navigation (centered horizontally)
+   ------------------------------------------------- */
+#navigation-bottom {
+    position:absolute;
+    bottom:15px;
+    left:0;
+    width:100%;
+}
+.nav-list {
+    list-style:none;
+    margin:60px;
+    padding:0;
+    display:flex;
+    float:right;    
+    gap:1.5rem;
+}
+.nav-list a {
+    color:whitesmoke;
+    text-decoration:none;
+    font-weight:400;
+    font-size:1.2rem;
+    padding:.3rem 0;
+}
+.nav-list a:hover,
+.nav-list a:focus {
+    color:white;
+    border-bottom:2px solid #96be2d;
+}
+
+/* -------------------------------------------------
+   7️⃣ RESPONSIVE tweaks (optional)
+   ------------------------------------------------- */
+@media (max-width:768px) {
+    #header {height:180px;}
+    #hero-banner {height:180px;}
+    #logo {width:180px;}
+    .nav-list {flex-wrap:wrap; gap:.8rem;}
+}
+
+
+
+/* -------------------------------------------------
+   CONTENT CONTAINER 
+   ------------------------------------------------- */
+
+#content-container {
+    margin-left:10%;
+    margin-right:10%;
+    padding:20px
+}
